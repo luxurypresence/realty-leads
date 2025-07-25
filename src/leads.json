@@ -1,0 +1,65 @@
+[
+  {
+    "id": "lead101",
+    "name": "Alice Smith",
+    "email": "alice.smith@example.com",
+    "phone": "555-123-4567",
+    "source": "Website Form",
+    "budget": 550000,
+    "propertyTypePreference": ["House", "Condo"],
+    "locationPreference": ["Downtown", "Suburbs"],
+    "inquiryDate": "2024-06-15T10:00:00Z",
+    "lastActivity": "2024-07-10T14:30:00Z",
+    "notes": "Expresses strong interest in 3+ bedroom houses. Mentioned a quick buying timeline.",
+    "emailEngagement": {
+      "openedEmails": 5,
+      "clickedLinks": 3
+    },
+    "websiteActivity": {
+      "pagesViewed": ["/properties/house-downtown", "/guides/buying-process"],
+      "timeOnSiteMinutes": 45
+    }
+  },
+  {
+    "id": "lead102",
+    "name": "Bob Johnson",
+    "email": "bob.johnson@example.com",
+    "phone": "555-987-6543",
+    "source": "Referral",
+    "budget": 300000,
+    "propertyTypePreference": ["Condo"],
+    "locationPreference": ["Uptown"],
+    "inquiryDate": "2024-07-01T09:15:00Z",
+    "lastActivity": "2024-07-02T11:00:00Z",
+    "notes": "Referred by current client. Looking for investment property. Budget is strict.",
+    "emailEngagement": {
+      "openedEmails": 1,
+      "clickedLinks": 0
+    },
+    "websiteActivity": {
+      "pagesViewed": ["/properties/condo-uptown"],
+      "timeOnSiteMinutes": 10
+    }
+  },
+  {
+    "id": "lead103",
+    "name": "Charlie Brown",
+    "email": "charlie.brown@example.com",
+    "phone": "555-111-2222",
+    "source": "Open House",
+    "budget": 700000,
+    "propertyTypePreference": ["House"],
+    "locationPreference": ["Suburbs"],
+    "inquiryDate": "2024-07-05T16:45:00Z",
+    "lastActivity": "2024-07-05T17:00:00Z",
+    "notes": "First-time homebuyer. Unsure about specific location. Attended one open house.",
+    "emailEngagement": {
+      "openedEmails": 0,
+      "clickedLinks": 0
+    },
+    "websiteActivity": {
+      "pagesViewed": [],
+      "timeOnSiteMinutes": 5
+    }
+  }
+]
