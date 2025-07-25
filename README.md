@@ -7,7 +7,7 @@
 
 2. Start the server:
    ```sh
-   npm run dev
+   npm run start
    ```
 
 3. Open [http://localhost:4000/leads](http://localhost:4000/leads)
