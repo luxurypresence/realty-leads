@@ -1,4 +1,4 @@
-import leadsData from '../leads.json' assert { type: 'json' };
+import leadsData from '../leads.json' with { type: 'json' };
 import type { Lead } from '../types/lead.js';
 
 class LeadService {
