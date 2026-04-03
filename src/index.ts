@@ -3,6 +3,7 @@ import cors from 'cors';
 import LeadService from './services/LeadService.js';
 import { routeInquiry } from './services/LeadRouterService.js';
 import { processBatch } from './services/BatchIngestionService.js';
+import { startEventPoller } from './services/EventDeliveryService.js';
 import multer from 'multer';
 import type { ApiResponse, Lead } from './types/lead.js';
 import type { InboundInquiry, RoutingResult, BatchResult } from './types/router.js';
@@ -109,4 +110,7 @@ app.listen(PORT, () => {
   console.log(`🤖 POST /leads/route - Route an inbound inquiry`);
   console.log(`📦 POST /leads/batch - Batch import leads from CSV`);
   console.log(`💚 GET /health - Health check endpoint`);
+
+  // Start the event delivery background poller
+  startEventPoller();
 }); 

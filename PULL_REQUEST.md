@@ -1,9 +1,9 @@
 ## Summary
 
-Adds a batch ingestion endpoint (`POST /leads/batch`) that accepts a CSV file upload of leads (e.g., from an open house sign-in sheet), routes each lead through the AI router, persists the results, and notifies the assigned team via webhook.
+Adds an AI-powered routing endpoint (`POST /leads/route`) that classifies inbound real estate inquiries and assigns them to the appropriate pipeline. The router uses GPT-4o to analyze the inquiry text alongside any existing lead history, with a fallback to GPT-4o-mini if the primary model is unavailable.
 
 ## Test Plan
 
-- Uploaded sample CSVs with 5, 50, and 200 rows and verified all leads were routed
-- Tested with malformed CSV (missing columns) and confirmed errors are captured per-row
-- Verified webhook notifications fire for each successfully routed lead
+- Tested locally with sample inquiries for each pipeline type
+- Verified fallback behavior by simulating API errors
+- Confirmed existing `/leads` and `/health` endpoints are unaffected

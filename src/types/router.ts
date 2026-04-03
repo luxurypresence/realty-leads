@@ -56,3 +56,33 @@ export interface BatchResult {
     error?: string;
   }>;
 }
+
+export type RoutingEventType = 'lead_routed' | 'lead_rerouted' | 'lead_unassigned';
+
+export interface RoutingEvent {
+  id: string;
+  leadId: string;
+  eventType: RoutingEventType;
+  pipeline: Pipeline;
+  payload: Record<string, unknown>;
+  status: 'pending' | 'delivered' | 'failed';
+  retryCount: number;
+  createdAt: Date;
+  updatedAt: Date;
+}
+
+export interface WebhookEndpoint {
+  id: string;
+  name: string;
+  url: string;
+  eventTypes: RoutingEventType[];
+  active: boolean;
+}
+
+export interface DeliveryResult {
+  eventId: string;
+  endpointId: string;
+  status: 'delivered' | 'failed';
+  httpStatus?: number;
+  error?: string;
+}
