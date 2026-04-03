@@ -34,3 +34,25 @@ export interface ExistingLead {
   assignedAgent?: string;
   previousPipeline?: Pipeline;
 }
+
+export interface BatchLeadRow {
+  name: string;
+  email: string;
+  phone: string;
+  notes: string;
+  propertyInterest: string;
+  source: string;
+}
+
+export interface BatchResult {
+  totalRows: number;
+  processed: number;
+  failed: number;
+  results: Array<{
+    row: number;
+    email: string;
+    pipeline: Pipeline;
+    status: 'routed' | 'failed';
+    error?: string;
+  }>;
+}
