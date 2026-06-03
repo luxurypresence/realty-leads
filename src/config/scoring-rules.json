@@ -1,0 +1,80 @@
+{
+  "rules": [
+    {
+      "name": "budget-high",
+      "conditions": {
+        "all": [
+          { "fact": "lead", "path": "$.budget", "operator": "greaterThanInclusive", "value": 700000 }
+        ]
+      },
+      "event": { "type": "score", "params": { "points": 5 } }
+    },
+    {
+      "name": "budget-mid",
+      "conditions": {
+        "all": [
+          { "fact": "lead", "path": "$.budget", "operator": "greaterThanInclusive", "value": 400000 }
+        ]
+      },
+      "event": { "type": "score", "params": { "points": 3 } }
+    },
+    {
+      "name": "prefers-house",
+      "conditions": {
+        "all": [
+          { "fact": "lead", "path": "$.propertyTypePreference", "operator": "contains", "value": "House" }
+        ]
+      },
+      "event": { "type": "score", "params": { "points": 2 } }
+    },
+    {
+      "name": "prefers-condo",
+      "conditions": {
+        "all": [
+          { "fact": "lead", "path": "$.propertyTypePreference", "operator": "contains", "value": "Condo" }
+        ]
+      },
+      "event": { "type": "score", "params": { "points": 1 } }
+    },
+    {
+      "name": "engaged-email-opens",
+      "conditions": {
+        "all": [
+          { "fact": "lead", "path": "$.emailEngagement.openedEmails", "operator": "greaterThanInclusive", "value": 3 }
+        ]
+      },
+      "event": { "type": "score", "params": { "points": 1 } }
+    },
+    {
+      "name": "engaged-link-clicks",
+      "conditions": {
+        "all": [
+          { "fact": "lead", "path": "$.emailEngagement.clickedLinks", "operator": "greaterThanInclusive", "value": 1 }
+        ]
+      },
+      "event": { "type": "score", "params": { "points": 1 } }
+    }
+  ],
+  "examples": [
+    {
+      "_note": "Extensibility stub — NOT loaded by the engine. Requires a custom operator registered via engine.addOperator('withinDays', ...) in ScoringService before moving into 'rules'.",
+      "name": "recent-activity",
+      "conditions": {
+        "all": [
+          { "fact": "lead", "path": "$.lastActivity", "operator": "withinDays", "value": 7 }
+        ]
+      },
+      "event": { "type": "score", "params": { "points": 2 } }
+    },
+    {
+      "_note": "Extensibility stub — NOT loaded by the engine. Uses only built-in operators; move into 'rules' to activate.",
+      "name": "referral-source",
+      "conditions": {
+        "all": [
+          { "fact": "lead", "path": "$.source", "operator": "equal", "value": "Referral" }
+        ]
+      },
+      "event": { "type": "score", "params": { "points": 2 } }
+    }
+  ]
+}

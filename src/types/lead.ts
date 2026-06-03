@@ -22,6 +22,8 @@ export interface Lead {
   notes: string;
   emailEngagement: EmailEngagement;
   websiteActivity: WebsiteActivity;
+  /** Rule-based lead score; undefined until scored by ScoringService */
+  score?: number;
 }
 
 export interface ApiResponse<T> {
