@@ -10,7 +10,8 @@
     "build": "tsc",
     "dev": "nodemon --exec ts-node dist/index.js",
     "start": "npm run build && npm run dev",
-    "type-check": "tsc --noEmit"
+    "type-check": "tsc --noEmit",
+    "test": "NODE_OPTIONS=--experimental-vm-modules jest"
   },
   "dependencies": {
     "express": "^4.18.2",
@@ -22,7 +23,9 @@
     "@types/cors": "^2.8.17",
     "typescript": "^5.3.3",
     "ts-node": "^10.9.2",
+    "jest": "^30.0.5",
     "ts-jest": "^29.1.1",
+    "@types/jest": "^30.0.0",
     "nodemon": "^3.1.10"
   }
 }
