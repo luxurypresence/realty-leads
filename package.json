@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "main": "dist/index.js",
   "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
   "scripts": {
     "build": "tsc",
     "dev": "nodemon --exec ts-node dist/index.js",
